@@ -1,0 +1,355 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    // ------todohighlight插件相关 ------
+    "todohighlight.keywords": [
+        {
+            "text": "IMPT:",
+            "color": "white",
+            "isWholeLine": false,
+            "backgroundColor": "red",
+        },
+        {
+            "text": "INFO:",
+            "color": "white",
+            "isWholeLine": false,
+            "backgroundColor": "green",
+        },
+        {
+            "text": "NOTE:",
+            "color": "white",
+            "isWholeLine": false,
+            "backgroundColor": "orange",
+        }  
+    ],
+    // ------todohighlight插件相关结束 ------
+
+    // 开启相对的行号
+    "editor.lineNumbers": "relative",
+    "vim.commandLineModeKeyBindings": [],
+    // 设置空格键为leader健
+    "vim.leader": "<Space>",
+    // 打开快速移动
+    "vim.easymotion": true,
+    // 光标移动时不自动打开已经折叠的代码
+    "vim.foldfix": true,
+    "vim.handleKeys": {
+        // 这里对默认的命令进行禁用（因为其中的gt会影响对代码跳转类型的定义） 
+        "{count}<C-PageDown>, {count}gt": false,
+    },
+    // normal模式快捷键
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // 代码折叠
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "editor.toggleFold"
+            ]
+        },
+        // ------lsp相关开始------ 
+        // 重命名符号(如函数名称，变量等)
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "r"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        // 跳转到下一个错误
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "j"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        // 跳转到上一个错误
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "k"
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        // 手工打开函数签名提示
+        {
+            "before": [
+                // "<leader>",
+                // "l",
+                // "s",
+                "<S-k>"
+            ],
+            "commands": [
+                "editor.action.triggerParameterHints"
+            ]
+        },
+        // 当前行toggle断点
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "l",
+        //         "k"
+        //     ],
+        //     "commands": [
+        //         "editor.action.marker.prev"
+        //         "breakpoint"
+        //     ]
+        // },
+        // 跳转到类型定义
+        {
+            "before": [
+                "g",
+                "t"
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition"                
+            ]
+        },
+        // 代码跳转到实现
+        {
+            "before": [
+                "g",
+                "I"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"                
+            ]
+        },
+        // 代码跳转到引用
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"                
+            ]
+        },
+        // 窥视定义
+        {
+            "before": [
+                "g",
+                "D"
+            ],
+            "commands": [
+                "editor.action.peekDefinition"                
+            ]
+        },
+        // // 窥视引用
+        // {
+        //     "before": [
+        //         "g",
+        //         "R"
+        //     ],
+        //     "commands": [
+        //         "editor.action.peekView"                
+        //     ]
+        // },
+        // 窥视类型
+        {
+            "before": [
+                "g",
+                "T"
+            ],
+            "commands": [
+                "editor.action.peekTypeDefinition"                
+            ]
+        },
+        // // 窥视实现
+        // {
+        //     "before": [
+        //         "g",
+        //         "I"
+        //     ],
+        //     "commands": [
+        //         "editor.action.peekImplementation"                
+        //     ]
+        // },
+        // ------lsp相关结束------ 
+
+        // buffers之间切换
+        {
+            // shift+h
+            "before": [
+                "<S-h>"
+            ],
+            "commands": [
+                ":bprevious"
+            ],
+        },
+        {
+            // shift+l
+            "before": [
+                "<S-l>"
+            ],
+            "commands": [
+                ":bnext"
+            ]
+        },
+        // 垂直split
+        {
+            "before": [
+                "leader",
+                "v"
+            ],
+            "commands": [
+                ":vsplit"
+            ]
+        },
+        // 水平split
+        {
+            "before": [
+                "leader",
+                "s"
+            ],
+            "commands": [
+                ":split"
+            ]
+        },
+        // 自定义代码注释
+        {
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        // panes之间移动
+        {
+            "before": [
+                "<C-h>",
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>",
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>",
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>",
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        // 自定义保存
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                ":w"
+            ]
+        },
+        // 自定义退出
+        {
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "commands": [
+                ":q"
+            ]
+        },
+        // 简化easymotion的search模式
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "s"
+        //     ],
+        //     "after": [
+        //         "<leader>",
+        //         "<leader>",
+        //         "s"
+        //     ]
+        // },
+        // 自定义文件浏览
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "e"
+        //     ],
+        //     "commands": [
+        //         // "workbench.view.explorer"
+        //         "workbench.explorer.fileView.focus"
+        //     ]
+        // }
+    ],
+    // visual模式快捷键
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // 自定义代码注释
+        {
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        }
+    ],
+    "vim.commandLineModeKeyBindingsNonRecursive": [],
+    "redhat.telemetry.enabled": false,
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path-mac": "/Users/Johnny/.vs-kubernetes/tools/helm/darwin-arm64/helm"
+    },
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro Darker",
+
+    // go语言插件相关，配置说明: https://github.com/golang/vscode-go/wiki/settings
+    "go.coverOnSave": false,
+    "go.coverageDecorator": {
+        "type": "gutter",
+        "coveredHighlightColor": "rgba(64,128,128,0.5)",
+        "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+        "coveredGutterStyle": "blockgreen",
+        "uncoveredGutterStyle": "blockred"
+    },
+    "go.coverOnSingleTest": true,
+    "go.coverOnSingleTestFile": true,
+    "go.coverOnTestPackage": true,
+    "go.enableCodeLens": {
+        "runtest": true
+    },
+    "go.testFlags": [
+        // "-cover",
+        "-v",
+        // "-coverpkg=all",
+        // "-coverprofile=/tmp/go-code-cover"
+    ],
+    "go.inlayHints.parameterNames": true,
+    
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.location": "hidden",
+}

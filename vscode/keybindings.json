@@ -1,0 +1,191 @@
+// 将键绑定放在此文件中以覆盖默认值
+[
+  // reload window
+  {
+    "command": "workbench.action.reloadWindow",
+    "key": "cmd+r"
+  },
+  // ------ 终端相关操作 ------
+  // toggle panel(即调试控制台，终端等)
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.togglePanel",
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  // {
+  //   "key": "shift+t",
+  //   "command": "workbench.action.togglePanel",
+  // },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  // ------ 终端相关操作结束 ------
+
+
+  // ------ debug相关操作 ------
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+d"
+  },
+  {
+    "command": "workbench.debug.action.focusBreakpointsView",
+    "key": "cmd+d",
+    "when": "editorTextFocus"
+  },
+  // ------ debug相关操作结束 ------
+
+
+  // ------ 插件管理相关操作 ------
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+x"
+  },
+  {
+    "command": "workbench.extensions.search",
+    "key": "cmd+x",
+    "when": "editorTextFocus"
+  },
+  // ------ 插件管理相关操作结束 ------
+
+  // ------ 单元测试管理相关操作 ------
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+u"
+  },
+  {
+    "command": "workbench.view.testing.focus",
+    "key": "cmd+u",
+    "when": "editorTextFocus"
+  },
+  // ------ 单元测试管理相关操作结束 ------
+
+
+  // ------ git管理相关操作 ------
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+g"
+  },
+  {
+    "command": "workbench.scm.repositories.focus",
+    "key": "cmd+g",
+    "when": "editorTextFocus"
+  },
+  // ------ git管理相关操作结束 ------
+
+
+  // ------ search相关操作 ------
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+s"
+  },
+  {
+    "command": "workbench.view.search.focus",
+    "key": "cmd+s",
+    "when": "editorTextFocus"
+  },
+  // ------ search相关操作结束 ------
+
+
+  // ------ 资源管理器相关操作 ------
+  // toggle主侧边栏(即资源管理器)
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+e"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "cmd+e",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  // {
+  //   "key": "shift+a",
+  //   "command": "workbench.action.newWindow",
+  //   "when": "!explorerViewletFocus"
+  // },
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "filesExplorer.copy",
+    "key": "c",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "filesExplorer.paste",
+    "key": "p",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "filesExplorer.cut",
+    "key": "x",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  // ------ 资源管理器相关操作结束 ------
+
+
+  // ------ 大纲 ------
+  // toggle辅助侧边栏(即大纲)
+  {
+    "key": "cmd+o",
+    // "command": "workbench.action.toggleAuxiliaryBar",
+    "command": "workbench.action.closeAuxiliaryBar",
+    // "when": "auxiliaryBarFocus"
+    // "when": "auxiliaryBarVisible"
+  },
+  {
+    "key": "cmd+o",
+    "command": "outline.focus",
+    // "command": "workbench.action.focusAuxiliaryBar",
+    // "command": "outline.collapse",
+    "when": "editorTextFocus"
+  },
+  // ------ 大纲结束 ------
+
+
+  // ------ lsp推荐列表切换 ------
+  // 参考: https://stackoverflow.com/questions/64474302/how-to-set-the-vscode-use-tab-switch-the-suggest
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible && suggestWidgetMultipleSuggestions"
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible && suggestWidgetMultipleSuggestions"
+  },
+  {
+    "key": "enter",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  // ------ lsp推荐列表切换结束 ------
+]
